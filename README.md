@@ -1,4 +1,4 @@
-# fourth_app
+# Flutter Food App
 
 A new Flutter project.
 
