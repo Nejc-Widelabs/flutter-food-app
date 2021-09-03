@@ -10,17 +10,26 @@ class SignIn extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
-        color: Colors.grey,
-        padding: EdgeInsets.fromLTRB(20, 100, 20, 0),
-        child: Column(
-          children: [
-            CompanyName(),
-            Slogan(),
-            SignInButton(),
-            SignUpText(),
-          ],
-        ),
+      body: Stack(
+        fit: StackFit.expand,
+        children: [
+          Image.asset(
+            'assets/images/burger.jfif',
+            fit: BoxFit.cover,
+          ),
+          Container(
+            color: Colors.transparent,
+            padding: EdgeInsets.fromLTRB(20, 100, 20, 0),
+            child: Column(
+              children: [
+                CompanyName(),
+                Slogan(),
+                SignInButton(),
+                SignUpText(),
+              ],
+            ),
+          ),
+        ],
       ),
     );
   }
