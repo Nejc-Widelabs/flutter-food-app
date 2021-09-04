@@ -8,8 +8,13 @@ import '../../models/food.dart';
 
 class FoodsList extends StatelessWidget {
   final List<Food> foods = Food.all();
+
   @override
   Widget build(BuildContext context) {
+    void _handleOnTap(int id) {
+      Navigator.pushNamed(context, '/food_detail', arguments: id);
+    }
+
     return Container(
       alignment: Alignment.centerLeft,
       padding: EdgeInsets.only(top: 10),
@@ -25,7 +30,12 @@ class FoodsList extends StatelessWidget {
             child: Container(
               child: ListView(
                 scrollDirection: Axis.horizontal,
-                children: foods.map((food) => FoodsCard(food.id)).toList(),
+                children: foods
+                    .map((food) => GestureDetector(
+                          child: FoodsCard(food.id),
+                          onTap: () => _handleOnTap(food.id),
+                        ))
+                    .toList(),
               ),
             ),
           ),
@@ -34,14 +44,3 @@ class FoodsList extends StatelessWidget {
     );
   }
 }
-
-/*
-                  FoodsCard('Extra Beef Burger', 4.8, 5.3, 9.90,
-                      'extra_beef_burger.jfif'),
-                  FoodsCard('Smoked Beef Burger', 4.5, 4, 9.90,
-                      'smoked_beef_burger.jfif'),
-                  FoodsCard('Extra Beef Burger', 4.8, 5.3, 9.90,
-                      'extra_beef_burger.jfif'),
-                  FoodsCard('Extra Beef Burger', 4.8, 5.3, 9.90,
-                      'extra_beef_burger.jfif'),
-*/

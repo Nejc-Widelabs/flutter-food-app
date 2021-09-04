@@ -16,7 +16,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/': (context) => SignIn(),
         '/foods': (context) => Foods(),
-        '/food': (context) => Food(),
+        '/food_detail': (context) => FoodDetail(),
       },
     );
   }
