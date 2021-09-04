@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
 //Screens
-import './screens/food/food.dart';
+import './screens/food_detail/food_detail.dart';
 import './screens/foods/foods.dart';
 import 'screens/sign_in/sign_in.dart';
 
