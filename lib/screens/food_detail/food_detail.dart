@@ -6,9 +6,11 @@ import 'rating_card.dart';
 import 'amount_counter.dart';
 import 'food_name_text.dart';
 import 'ingredient_card.dart';
+import 'bottom_navigator.dart';
 
 //Models
 import '../../models/food.dart';
+import '../../models/cart.dart';
 
 class FoodDetail extends StatefulWidget {
   @override
@@ -106,6 +108,10 @@ class _FoodDetailState extends State<FoodDetail> {
             ],
           ),
         ),
+      ),
+      bottomNavigationBar: BottomNavigator(
+        food.price,
+        () => Cart.addToCart(context, _amountCount, food),
       ),
     );
   }

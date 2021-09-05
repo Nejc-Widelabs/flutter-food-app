@@ -16,7 +16,10 @@ class FoodsNavigator extends StatelessWidget {
           label: 'Home',
         ),
         BottomNavigationBarItem(
-          icon: Icon(Icons.shopping_cart_outlined),
+          icon: GestureDetector(
+            child: Icon(Icons.shopping_cart_outlined),
+            onTap: () => Navigator.pushNamed(context, '/cart'),
+          ),
           label: 'Shopping',
         ),
         BottomNavigationBarItem(
